@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akhila N Pillai — Quality Engineering & MedTech Regulatory Affairs</title>
+<meta name="description" content="Test & Quality Engineer moving into MedTech Regulatory Affairs. M.Sc. Medical Systems Engineering candidate in Magdeburg, Germany." />
+<style>
+  :root{
+    --bg:#f6f8fb; --surface:#ffffff; --surface-2:#eef2f8;
+    --ink:#0f1b2d; --muted:#54657d; --line:#e2e8f2;
+    --brand:#0b5394; --brand-2:#1c7f7a; --accent:#2e7d32;
+    --chip:#eaf1fb; --chip-ink:#1c4587;
+    --shadow:0 1px 2px rgba(16,32,58,.06),0 8px 24px rgba(16,32,58,.06);
+    --radius:16px; --maxw:1060px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0b1220; --surface:#111b2e; --surface-2:#0e1728;
+      --ink:#e8eef7; --muted:#9fb0c7; --line:#20304a;
+      --brand:#5aa0e0; --brand-2:#4fc7bf; --accent:#5bbf62;
+      --chip:#16233a; --chip-ink:#9cc4ef;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  section{padding:72px 0; border-top:1px solid var(--line)}
+  h2{font-size:clamp(1.5rem,3vw,2rem); margin:0 0 6px; letter-spacing:-.02em}
+  .eyebrow{color:var(--brand-2); font-weight:700; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase}
+  .lead{color:var(--muted); max-width:60ch; margin:.2rem 0 0}
+
+  /* NAV */
+  header.nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent); border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:62px}
+  .brand{font-weight:800; letter-spacing:-.02em; color:var(--ink); font-size:1.02rem}
+  .brand span{color:var(--brand)}
+  .nav nav{display:flex; gap:22px}
+  .nav nav a{color:var(--muted); font-weight:600; font-size:.92rem}
+  .nav nav a:hover{color:var(--ink); text-decoration:none}
+  @media(max-width:720px){.nav nav{display:none}}
+
+  /* HERO */
+  .hero{padding:84px 0 68px; border-top:none}
+  .hero .wrap{display:grid; grid-template-columns:1.4fr .9fr; gap:40px; align-items:center}
+  @media(max-width:840px){.hero .wrap{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.3rem); line-height:1.08; letter-spacing:-.03em; margin:.5rem 0 .3rem}
+  .hero h1 em{font-style:normal; background:linear-gradient(120deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .hero p.tag{font-size:1.12rem; color:var(--muted); max-width:52ch}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:12px;
+    font-weight:700; font-size:.92rem; border:1px solid transparent}
+  .btn.primary{background:var(--brand); color:#fff}
+  .btn.primary:hover{filter:brightness(1.06); text-decoration:none}
+  .btn.ghost{background:var(--surface); color:var(--ink); border-color:var(--line); box-shadow:var(--shadow)}
+  .btn.ghost:hover{border-color:var(--brand); text-decoration:none}
+  .card-id{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px}
+  .card-id .row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--line); font-size:.94rem}
+  .card-id .row:last-child{border-bottom:none}
+  .card-id .k{color:var(--muted)} .card-id .v{font-weight:700; text-align:right}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:7px;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+
+  /* PROJECTS */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:30px}
+  @media(max-width:840px){.grid2{grid-template-columns:1fr}}
+  .proj{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+    padding:26px; display:flex; flex-direction:column; transition:transform .16s ease, border-color .16s ease}
+  .proj:hover{transform:translateY(-3px); border-color:var(--brand)}
+  .proj h3{margin:.2rem 0 .1rem; font-size:1.28rem; letter-spacing:-.02em}
+  .proj .sub{color:var(--brand-2); font-weight:700; font-size:.9rem; margin-bottom:10px}
+  .proj p{color:var(--muted); font-size:.96rem; margin:.2rem 0 16px; flex:1}
+  .tags{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px}
+  .tag{background:var(--chip); color:var(--chip-ink); font-size:.76rem; font-weight:700; padding:5px 10px; border-radius:999px}
+  .proj .links{display:flex; gap:16px; font-weight:700; font-size:.9rem}
+  .emoji{font-size:1.7rem}
+
+  /* SKILLS */
+  .skills{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:30px}
+  @media(max-width:840px){.skills{grid-template-columns:1fr}}
+  .skillcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+  .skillcard h4{margin:0 0 12px; font-size:1rem; display:flex; align-items:center; gap:9px}
+  .skillcard ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:7px}
+  .skillcard li{background:var(--surface-2); border:1px solid var(--line); font-size:.8rem; font-weight:600; color:var(--ink); padding:5px 10px; border-radius:8px}
+
+  /* TIMELINE */
+  .tl{margin-top:30px; position:relative; padding-left:26px}
+  .tl::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:var(--line)}
+  .tl .item{position:relative; padding:0 0 30px 18px}
+  .tl .item::before{content:""; position:absolute; left:-26px; top:5px; width:12px; height:12px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px var(--bg)}
+  .tl .item:last-child{padding-bottom:0}
+  .tl h3{margin:0; font-size:1.08rem}
+  .tl .meta{color:var(--muted); font-size:.88rem; font-weight:600; margin:2px 0 10px}
+  .tl ul{margin:0; padding-left:18px; color:var(--muted); font-size:.94rem}
+  .tl ul li{margin-bottom:5px}
+
+  /* EDU / CERTS */
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:30px}
+  @media(max-width:840px){.two{grid-template-columns:1fr}}
+  .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+  .panel h3{margin-top:0; font-size:1.1rem}
+  .panel .edu{margin-bottom:16px}
+  .panel .edu:last-child{margin-bottom:0}
+  .panel .edu .d{font-weight:700}
+  .panel .edu .m{color:var(--muted); font-size:.88rem}
+  .certlist{list-style:none; margin:0; padding:0}
+  .certlist li{padding:9px 0; border-bottom:1px dashed var(--line); font-size:.94rem; display:flex; gap:10px}
+  .certlist li:last-child{border-bottom:none}
+  .certlist li::before{content:"✓"; color:var(--accent); font-weight:800}
+
+  .note{background:color-mix(in srgb,var(--accent) 9%,var(--surface)); border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+    border-radius:12px; padding:14px 16px; font-size:.9rem; color:var(--muted); margin-top:26px}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact .cta{justify-content:center}
+  footer{padding:34px 0 46px; text-align:center; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line)}
+  .lang{display:inline-flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:14px; color:var(--muted); font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">Akhila<span>.</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Quality Engineering &nbsp;·&nbsp; MedTech Regulatory Affairs</div>
+      <h1>Akhila N Pillai<br/><em>de-risking medical software.</em></h1>
+      <p class="tag">Test &amp; Quality Engineer with 3+ years across web and mobile, now specializing in
+      medical-device regulation. I both test software and carry it through the EU regulatory chain:
+      MDR, ISO 14971, IEC 62304, and the EU AI Act.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn ghost" href="mailto:akhilanp516@gmail.com">✉️ Email me</a>
+        <a class="btn ghost" href="https://github.com/Akhila77777" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="card-id">
+      <div class="row"><span class="k">Role focus</span><span class="v">RA / Quality / AI-MedTech</span></div>
+      <div class="row"><span class="k">Studying</span><span class="v">M.Sc. Medical Systems Eng.</span></div>
+      <div class="row"><span class="k">Location</span><span class="v">Magdeburg, Germany</span></div>
+      <div class="row"><span class="k">Languages</span><span class="v">English C1 · German B1</span></div>
+      <div class="row"><span class="k">Status</span><span class="v"><span class="dot"></span>Open to opportunities</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Two disciplines, one profile</h2>
+    <p class="lead">I bridge software quality engineering and medical-device regulatory affairs. That
+    combination is deliberate: I can test and de-risk software, and I can document a device through
+    the standards that matter in the EU market.</p>
+    <p class="lead" style="margin-top:14px">Today I own QA for two mobile core teams (iOS and Android)
+    at ImmoScout24 as a Working Student Quality Specialist, while completing a Master in Medical
+    Systems Engineering focused on the EU regulatory framework for medical devices and AI. Alongside
+    my studies I build regulated-software portfolio projects to practice the full lifecycle end to end.</p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Featured projects</div>
+    <h2>Regulated software, built end to end</h2>
+    <p class="lead">Self-directed portfolio projects, framed honestly as simulations, not certified
+    devices, no real patient data, no clinical claims.</p>
+    <div class="grid2">
+
+      <article class="proj">
+        <div class="emoji">🩺</div>
+        <h3>DermaScan</h3>
+        <div class="sub">AI skin-lesion classifier as a regulated SaMD</div>
+        <p>An AI melanoma-screening classifier taken through the full EU MDR SaMD process as a
+        simulation: Rule 11 classification (Class IIa), an ISO 14971 risk file with an AI-hazard
+        register, an IEC 62304 (Class C) software lifecycle, EU AI Act Annex IV documentation,
+        clinical evaluation, and a post-market KPI dashboard, plus a FastAPI inference service.</p>
+        <div class="tags">
+          <span class="tag">EU MDR 2017/745</span><span class="tag">ISO 14971</span>
+          <span class="tag">IEC 62304</span><span class="tag">EU AI Act</span>
+          <span class="tag">FastAPI</span><span class="tag">Python</span>
+        </div>
+        <div class="links"><a href="https://github.com/Akhila77777/Regulatory_project1" target="_blank" rel="noopener">Repository ↗</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="emoji">🧭</div>
+        <h3>MedVis — Needle Insertion Planning</h3>
+        <div class="sub">Medical visualization + systems engineering</div>
+        <p>A 3D Slicer Python module that plans a percutaneous needle trajectory on a CT volume and
+        checks it against a segmented no-go vessel, paired with an Arcadia/Capella MBSE model, an
+        IREB requirements spec with a traceability matrix, and an ISO 14971 hazard analysis, one
+        thread from clinical hazard down to the line of code and its unit test.</p>
+        <div class="tags">
+          <span class="tag">3D Slicer</span><span class="tag">VTK</span>
+          <span class="tag">MONAI</span><span class="tag">Capella/Arcadia</span>
+          <span class="tag">IREB</span><span class="tag">ISO 14971</span>
+        </div>
+        <div class="links"><a href="https://github.com/Akhila77777/MedVis" target="_blank" rel="noopener">Repository ↗</a></div>
+      </article>
+
+    </div>
+    <div class="note">A third portfolio project, an ISO 9001-based QMS design and mock internal audit
+    (ISO 19011) for a telemedicine application, covers QMS design, SIPOC/Turtle process mapping, a
+    risk register, and a CAPA framework.</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div>
+    <h2>Core expertise</h2>
+    <div class="skills">
+      <div class="skillcard">
+        <h4>🛡️ Regulatory &amp; Quality</h4>
+        <ul>
+          <li>EU MDR 2017/745</li><li>ISO 14971</li><li>IEC 62304</li><li>ISO 13485</li>
+          <li>EU AI Act 2024/1689</li><li>ISO 9001 QMS design</li><li>Internal audits (ISO 19011)</li>
+          <li>Risk management &amp; CAPA</li><li>Clinical evaluation (MDCG 2020-1)</li>
+          <li>Post-Market Surveillance / PMCF</li><li>GSPR &amp; technical documentation</li>
+          <li>Requirements traceability (REQ/RISK/TST)</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h4>🧪 Testing &amp; Automation</h4>
+        <ul>
+          <li>Manual &amp; automation testing</li><li>Selenium</li><li>Appium</li><li>Maestro</li>
+          <li>API testing</li><li>Integration testing</li><li>Regression testing</li>
+          <li>End-to-end testing</li><li>UAT</li><li>Mobile (Android &amp; iOS)</li>
+          <li>JIRA</li><li>Linear</li><li>Agile</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h4>⚙️ Engineering &amp; Tools</h4>
+        <ul>
+          <li>Python</li><li>FastAPI</li><li>Capella/Arcadia MBSE</li><li>3D Slicer</li>
+          <li>VTK</li><li>MONAI</li><li>Advanced Excel (data modeling)</li>
+          <li>ML dataset creation</li><li>Kubernetes monitoring</li><li>PuTTY / VM health</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2>Professional experience</h2>
+    <div class="tl">
+      <div class="item">
+        <h3>Working Student — Quality Specialist · ImmoScout24</h3>
+        <div class="meta">Germany · January 2024 – Present</div>
+        <ul>
+          <li>Single-handedly own QA of two mobile core teams for both iOS and Android.</li>
+          <li>Contribute to internal, risk-based mobile audits (native flows, web views, UI/UX) based on ISO/IEC 25010.</li>
+          <li>Automation testing with Maestro and Appium in Android Studio and Xcode.</li>
+          <li>Conduct and steer User Acceptance Tests (UAT) across multiple teams; triage in JIRA and Linear.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>Test Engineer · Infosys</h3>
+        <div class="meta">India · March 2021 – May 2023 · PolyCloud (Daimler); KBC Banking &amp; Insurance</div>
+        <ul>
+          <li>Functional and end-to-end automation testing with Selenium for travel and MTPL insurance.</li>
+          <li>Created ML datasets and simulated alert situations via PuTTY, monitoring VM and Kubernetes health.</li>
+          <li>Daily regression testing and logging on the live environment to maintain web application integrity.</li>
+          <li>Performed unit, API, and integration testing to verify functionality and security.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION + CERTS -->
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education &amp; credentials</div>
+    <h2>Education &amp; certifications</h2>
+    <div class="two">
+      <div class="panel">
+        <h3>🎓 Education</h3>
+        <div class="edu">
+          <div class="d">M.Sc. Medical Systems Engineering</div>
+          <div class="m">Otto von Guericke University, Magdeburg · April 2023 – Present</div>
+          <div class="m" style="margin-top:6px">Medical Regulatory Affairs, approval of medical devices (EUDAMED, QMS, risk management, FMEA, technical documentation, clinical evaluation), medical visualization, clinical trials &amp; biostatistics, GCP, post-market surveillance.</div>
+        </div>
+        <div class="edu">
+          <div class="d">B.Tech. Electronics &amp; Communication Engineering</div>
+          <div class="m">College of Engineering Chengannur, India · 2016 – 2020</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>📜 Certifications</h3>
+        <ul class="certlist">
+          <li>Management System Auditor Training — ISO 19011:2018</li>
+          <li>Medical Device Regulation 2017/745 (EU regulatory affairs)</li>
+          <li>ISO 14971 — Medical device risk management</li>
+          <li>Medical Device Process Validation — ISO 13485 (IQ, OQ, PQ)</li>
+          <li>Advanced Microsoft Excel (PivotTables, XLOOKUP, Data Modeling)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's talk</h2>
+    <p class="lead" style="margin:0 auto">Open to Regulatory Affairs, Quality, and AI-in-MedTech
+    opportunities in Germany.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:akhilanp516@gmail.com">✉️ akhilanp516@gmail.com</a>
+      <a class="btn ghost" href="https://github.com/Akhila77777" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="lang">
+      <span>🇬🇧 English — Fluent (C1)</span>
+      <span>🇩🇪 German — Intermediate (B1, actively improving)</span>
+      <span>📍 Magdeburg, Germany</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Akhila N Pillai · Built as a personal portfolio · Projects are self-directed simulations, not certified medical devices.</div>
+</footer>
+
+</body>
+</html>
