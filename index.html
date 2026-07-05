@@ -44,9 +44,14 @@
   .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:62px}
   .brand{font-weight:800; letter-spacing:-.02em; color:var(--ink); font-size:1.02rem}
   .brand span{color:var(--brand)}
+  .navright{display:flex; align-items:center; gap:20px}
   .nav nav{display:flex; gap:22px}
   .nav nav a{color:var(--muted); font-weight:600; font-size:.92rem}
   .nav nav a:hover{color:var(--ink); text-decoration:none}
+  .langtoggle{background:var(--surface); color:var(--ink); border:1px solid var(--line);
+    border-radius:8px; padding:6px 11px; font-weight:800; font-size:.82rem; cursor:pointer;
+    letter-spacing:.04em; box-shadow:var(--shadow); line-height:1}
+  .langtoggle:hover{border-color:var(--brand)}
   @media(max-width:720px){.nav nav{display:none}}
 
   /* HERO */
@@ -131,14 +136,17 @@
 <header class="nav">
   <div class="wrap">
     <div class="brand">Akhila<span>.</span></div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="navright">
+      <nav>
+        <a href="#about" data-de="Über mich">About</a>
+        <a href="#projects" data-de="Projekte">Projects</a>
+        <a href="#skills" data-de="Kompetenzen">Skills</a>
+        <a href="#experience" data-de="Erfahrung">Experience</a>
+        <a href="#education" data-de="Ausbildung">Education</a>
+        <a href="#contact" data-de="Kontakt">Contact</a>
+      </nav>
+      <button id="langBtn" class="langtoggle" type="button" aria-label="Auf Deutsch umschalten">DE</button>
+    </div>
   </div>
 </header>
 
@@ -146,26 +154,26 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Quality Engineering &nbsp;·&nbsp; MedTech Regulatory Affairs</div>
-      <h1>Akhila N Pillai<br/><em>de-risking medical software.</em></h1>
-      <p class="tag">Quality Specialist at ImmoScout24 and Test Engineer with 3+ years across web and
+      <div class="eyebrow" data-de="Qualitätssicherung &nbsp;·&nbsp; MedTech Regulatory Affairs">Quality Engineering &nbsp;·&nbsp; MedTech Regulatory Affairs</div>
+      <h1>Akhila N Pillai<br/><em data-de="medizinische Software sicherer machen.">de-risking medical software.</em></h1>
+      <p class="tag" data-de="Quality Specialist bei ImmoScout24 und Test Engineer mit über 3 Jahren Erfahrung in Web und Mobile, mit aktuellem Schwerpunkt auf der Zulassung von Medizinprodukten. Ich absolviere einen Master in Medical Systems Engineering an der OvGU Magdeburg mit Vertiefung in Regulatory Affairs und Computer Assisted Surgery und entwickle regulierte Softwareprojekte wie DermaScan (eine KI-gestützte Software als Medizinprodukt) und MedVis (bildgeführte Nadelplatzierungsplanung). Dabei führe ich Software durch die EU-Regulierungskette: MDR, ISO 14971, IEC 62304 und den EU AI Act.">Quality Specialist at ImmoScout24 and Test Engineer with 3+ years across web and
       mobile, now specializing in medical-device regulation. I am completing a Master in Medical Systems
       Engineering at OvGU Magdeburg, deepening in Regulatory Affairs and Computer Assisted Surgery, and I
       build regulated-software projects such as DermaScan (an AI Software as a Medical Device) and MedVis
       (image-guided needle-insertion planning), carrying software through the EU regulatory chain: MDR,
       ISO 14971, IEC 62304, and the EU AI Act.</p>
       <div class="cta">
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn ghost" href="mailto:akhilanp516@gmail.com">✉️ Email me</a>
+        <a class="btn primary" href="#projects" data-de="Projekte ansehen">View projects</a>
+        <a class="btn ghost" href="mailto:akhilanp516@gmail.com" data-de="✉️ E-Mail schreiben">✉️ Email me</a>
         <a class="btn ghost" href="https://github.com/Akhila77777" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
     <aside class="card-id">
-      <div class="row"><span class="k">Role focus</span><span class="v">RA / Quality / AI-MedTech</span></div>
-      <div class="row"><span class="k">Studying</span><span class="v">M.Sc. Medical Systems Eng.</span></div>
-      <div class="row"><span class="k">Location</span><span class="v">Magdeburg, Germany</span></div>
-      <div class="row"><span class="k">Languages</span><span class="v">English C1 · German B1</span></div>
-      <div class="row"><span class="k">Status</span><span class="v"><span class="dot"></span>Open to opportunities</span></div>
+      <div class="row"><span class="k" data-de="Schwerpunkt">Role focus</span><span class="v" data-de="RA / Qualität / KI-MedTech">RA / Quality / AI-MedTech</span></div>
+      <div class="row"><span class="k" data-de="Studium">Studying</span><span class="v">M.Sc. Medical Systems Eng.</span></div>
+      <div class="row"><span class="k" data-de="Standort">Location</span><span class="v" data-de="Magdeburg, Deutschland">Magdeburg, Germany</span></div>
+      <div class="row"><span class="k" data-de="Sprachen">Languages</span><span class="v" data-de="Englisch C1 · Deutsch B1">English C1 · German B1</span></div>
+      <div class="row"><span class="k">Status</span><span class="v" data-de="<span class='dot'></span>Offen für neue Möglichkeiten"><span class="dot"></span>Open to opportunities</span></div>
     </aside>
   </div>
 </section>
@@ -173,18 +181,18 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="eyebrow">About</div>
-    <h2>Two disciplines, one profile</h2>
-    <p class="lead">I bridge software quality engineering and medical-device regulatory affairs. That
+    <div class="eyebrow" data-de="Über mich">About</div>
+    <h2 data-de="Zwei Disziplinen, ein Profil">Two disciplines, one profile</h2>
+    <p class="lead" data-de="Ich verbinde Software-Qualitätssicherung mit Regulatory Affairs für Medizinprodukte. Diese Kombination ist bewusst gewählt: Ich kann Software testen und ihre Risiken reduzieren, und ich kann ein Produkt gemäß den Standards dokumentieren, die auf dem EU-Markt wichtig sind.">I bridge software quality engineering and medical-device regulatory affairs. That
     combination is deliberate: I can test and de-risk software, and I can document a device through
     the standards that matter in the EU market.</p>
-    <p class="lead" style="margin-top:14px">Today, as a Working Student Quality Specialist at ImmoScout24,
+    <p class="lead" style="margin-top:14px" data-de="Heute verantworte ich als Werkstudentin Quality Specialist bei ImmoScout24 eigenständig die gesamte Qualitätssicherung für zwei mobile Kernteams (iOS und Android). Ich erstelle Testfälle als zentrale Referenz, baue wiederverwendbare Automatisierung mit Appium und Maestro auf, leite User Acceptance Tests mit Stakeholdern und Entwicklern und führe Release-Tests durch, die kostenpflichtige In-App-Kaufprozesse absichern. Außerdem richte ich AB-Tracking für sauberere Analysen ein, führe Audits nach ISO/IEC 25010 und ISO 19011:2018 durch und nutze KI, um die Testerstellung zu beschleunigen.">Today, as a Working Student Quality Specialist at ImmoScout24,
     I single-handedly own end-to-end QA for two mobile core teams (iOS and Android). I author test cases
     as a single source of truth, build reusable automation with Appium and Maestro, drive User Acceptance
     Testing with stakeholders and developers, and run release testing that protects paid in-app purchase
     flows. I also set up AB tracking for cleaner analytics, run ISO/IEC 25010 and ISO 19011:2018 audits,
     and use AI to accelerate test creation.</p>
-    <p class="lead" style="margin-top:14px">In parallel I am completing a Master in Medical Systems
+    <p class="lead" style="margin-top:14px" data-de="Parallel absolviere ich einen Master in Medical Systems Engineering mit Fokus auf den EU-Regulierungsrahmen für Medizinprodukte und KI und entwickle Portfolio-Projekte für regulierte Software, um den gesamten Lebenszyklus durchgängig zu üben.">In parallel I am completing a Master in Medical Systems
     Engineering focused on the EU regulatory framework for medical devices and AI, and I build
     regulated-software portfolio projects to practice the full lifecycle end to end.</p>
   </div>
@@ -193,17 +201,17 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
-    <div class="eyebrow">Featured projects</div>
-    <h2>Regulated software, built end to end</h2>
-    <p class="lead">Self-directed portfolio projects, framed honestly as simulations, not certified
+    <div class="eyebrow" data-de="Ausgewählte Projekte">Featured projects</div>
+    <h2 data-de="Regulierte Software, durchgängig entwickelt">Regulated software, built end to end</h2>
+    <p class="lead" data-de="Eigenständige Portfolio-Projekte, ehrlich als Simulationen dargestellt: keine zertifizierten Produkte, keine echten Patientendaten, keine klinischen Aussagen.">Self-directed portfolio projects, framed honestly as simulations, not certified
     devices, no real patient data, no clinical claims.</p>
     <div class="grid2">
 
       <article class="proj">
         <div class="emoji">🩺</div>
         <h3>DermaScan</h3>
-        <div class="sub">AI skin-lesion classifier as a regulated SaMD</div>
-        <p>An AI melanoma-screening classifier taken through the full EU MDR SaMD process as a
+        <div class="sub" data-de="KI-Klassifikator für Hautläsionen als reguliertes SaMD">AI skin-lesion classifier as a regulated SaMD</div>
+        <p data-de="Ein KI-Klassifikator zum Melanom-Screening, als Simulation durch den vollständigen EU-MDR-Prozess für ein SaMD geführt: Klassifizierung nach Regel 11 (Klasse IIa), eine ISO-14971-Risikoakte mit KI-Gefährdungsregister, ein Software-Lebenszyklus nach IEC 62304 (Klasse C), Dokumentation nach EU AI Act Anhang IV, klinische Bewertung und ein Post-Market-KPI-Dashboard sowie ein FastAPI-Inferenzdienst.">An AI melanoma-screening classifier taken through the full EU MDR SaMD process as a
         simulation: Rule 11 classification (Class IIa), an ISO 14971 risk file with an AI-hazard
         register, an IEC 62304 (Class C) software lifecycle, EU AI Act Annex IV documentation,
         clinical evaluation, and a post-market KPI dashboard, plus a FastAPI inference service.</p>
@@ -212,14 +220,14 @@
           <span class="tag">IEC 62304</span><span class="tag">EU AI Act</span>
           <span class="tag">FastAPI</span><span class="tag">Python</span>
         </div>
-        <div class="links"><a href="https://github.com/Akhila77777/Regulatory_project1" target="_blank" rel="noopener">Repository ↗</a></div>
+        <div class="links"><a href="https://github.com/Akhila77777/Regulatory_project1" target="_blank" rel="noopener" data-de="Zum Repository ↗">Repository ↗</a></div>
       </article>
 
       <article class="proj">
         <div class="emoji">🧭</div>
-        <h3>MedVis — Needle Insertion Planning</h3>
-        <div class="sub">Medical visualization + systems engineering</div>
-        <p>A 3D Slicer Python module that plans a percutaneous needle trajectory on a CT volume and
+        <h3 data-de="MedVis — Nadelplatzierungsplanung">MedVis — Needle Insertion Planning</h3>
+        <div class="sub" data-de="Medizinische Visualisierung + Systems Engineering">Medical visualization + systems engineering</div>
+        <p data-de="Ein Python-Modul für 3D Slicer, das eine perkutane Nadeltrajektorie auf einem CT-Volumen plant und gegen ein segmentiertes Sperrgefäß prüft, kombiniert mit einem MBSE-Modell in Arcadia/Capella, einer IREB-Anforderungsspezifikation mit Traceability-Matrix und einer ISO-14971-Gefährdungsanalyse: ein durchgängiger Faden von der klinischen Gefährdung bis zur Codezeile und ihrem Unit-Test.">A 3D Slicer Python module that plans a percutaneous needle trajectory on a CT volume and
         checks it against a segmented no-go vessel, paired with an Arcadia/Capella MBSE model, an
         IREB requirements spec with a traceability matrix, and an ISO 14971 hazard analysis, one
         thread from clinical hazard down to the line of code and its unit test.</p>
@@ -228,11 +236,11 @@
           <span class="tag">MONAI</span><span class="tag">Capella/Arcadia</span>
           <span class="tag">IREB</span><span class="tag">ISO 14971</span>
         </div>
-        <div class="links"><a href="https://github.com/Akhila77777/MedVis" target="_blank" rel="noopener">Repository ↗</a></div>
+        <div class="links"><a href="https://github.com/Akhila77777/MedVis" target="_blank" rel="noopener" data-de="Zum Repository ↗">Repository ↗</a></div>
       </article>
 
     </div>
-    <div class="note">A third portfolio project, an ISO 9001-based QMS design and mock internal audit
+    <div class="note" data-de="Ein drittes Portfolio-Projekt, ein ISO-9001-basiertes QMS-Design und ein simuliertes internes Audit (ISO 19011) für eine Telemedizin-Anwendung, umfasst QMS-Design, SIPOC-/Turtle-Prozessmodellierung, ein Risikoregister und ein CAPA-Rahmenwerk.">A third portfolio project, an ISO 9001-based QMS design and mock internal audit
     (ISO 19011) for a telemedicine application, covers QMS design, SIPOC/Turtle process mapping, a
     risk register, and a CAPA framework.</div>
   </div>
@@ -241,34 +249,34 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
-    <div class="eyebrow">Skills</div>
-    <h2>Core expertise</h2>
+    <div class="eyebrow" data-de="Kompetenzen">Skills</div>
+    <h2 data-de="Kernkompetenzen">Core expertise</h2>
     <div class="skills">
       <div class="skillcard">
-        <h4>🛡️ Regulatory &amp; Quality</h4>
+        <h4 data-de="🛡️ Regulatory &amp; Qualität">🛡️ Regulatory &amp; Quality</h4>
         <ul>
           <li>EU MDR 2017/745</li><li>ISO 14971</li><li>IEC 62304</li><li>ISO 13485</li>
-          <li>EU AI Act 2024/1689</li><li>ISO 9001 QMS design</li><li>Internal audits (ISO 19011)</li>
-          <li>Risk management &amp; CAPA</li><li>Clinical evaluation (MDCG 2020-1)</li>
-          <li>Post-Market Surveillance / PMCF</li><li>GSPR &amp; technical documentation</li>
-          <li>Requirements traceability (REQ/RISK/TST)</li>
+          <li>EU AI Act 2024/1689</li><li data-de="ISO 9001 QMS-Design">ISO 9001 QMS design</li><li data-de="Interne Audits (ISO 19011)">Internal audits (ISO 19011)</li>
+          <li data-de="Risikomanagement &amp; CAPA">Risk management &amp; CAPA</li><li data-de="Klinische Bewertung (MDCG 2020-1)">Clinical evaluation (MDCG 2020-1)</li>
+          <li>Post-Market Surveillance / PMCF</li><li data-de="GSPR &amp; technische Dokumentation">GSPR &amp; technical documentation</li>
+          <li data-de="Anforderungsverfolgung (REQ/RISK/TST)">Requirements traceability (REQ/RISK/TST)</li>
         </ul>
       </div>
       <div class="skillcard">
-        <h4>🧪 Testing &amp; Automation</h4>
+        <h4 data-de="🧪 Test &amp; Automatisierung">🧪 Testing &amp; Automation</h4>
         <ul>
-          <li>Manual &amp; automation testing</li><li>Selenium</li><li>Appium</li><li>Maestro</li>
-          <li>API testing</li><li>Integration testing</li><li>Regression testing</li>
-          <li>End-to-end testing</li><li>UAT</li><li>Mobile (Android &amp; iOS)</li>
+          <li data-de="Manuelles &amp; automatisiertes Testen">Manual &amp; automation testing</li><li>Selenium</li><li>Appium</li><li>Maestro</li>
+          <li data-de="API-Tests">API testing</li><li data-de="Integrationstests">Integration testing</li><li data-de="Regressionstests">Regression testing</li>
+          <li data-de="End-to-End-Tests">End-to-end testing</li><li>UAT</li><li data-de="Mobile (Android &amp; iOS)">Mobile (Android &amp; iOS)</li>
           <li>JIRA</li><li>Linear</li><li>Agile</li>
         </ul>
       </div>
       <div class="skillcard">
-        <h4>⚙️ Engineering &amp; Tools</h4>
+        <h4 data-de="⚙️ Engineering &amp; Tools">⚙️ Engineering &amp; Tools</h4>
         <ul>
           <li>Python</li><li>FastAPI</li><li>Capella/Arcadia MBSE</li><li>3D Slicer</li>
-          <li>VTK</li><li>MONAI</li><li>Advanced Excel (data modeling)</li>
-          <li>ML dataset creation</li><li>Kubernetes monitoring</li><li>PuTTY / VM health</li>
+          <li>VTK</li><li>MONAI</li><li data-de="Advanced Excel (Datenmodellierung)">Advanced Excel (data modeling)</li>
+          <li data-de="ML-Datensatzerstellung">ML dataset creation</li><li data-de="Kubernetes-Monitoring">Kubernetes monitoring</li><li data-de="PuTTY / VM-Health">PuTTY / VM health</li>
         </ul>
       </div>
     </div>
@@ -278,31 +286,31 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="eyebrow">Experience</div>
-    <h2>Professional experience</h2>
+    <div class="eyebrow" data-de="Erfahrung">Experience</div>
+    <h2 data-de="Berufserfahrung">Professional experience</h2>
     <div class="tl">
       <div class="item">
-        <h3>Working Student — Quality Specialist · ImmoScout24</h3>
-        <div class="meta">Germany · January 2024 – Present · ImmoScout mobile app (Android &amp; iOS)</div>
+        <h3 data-de="Werkstudentin — Quality Specialist · ImmoScout24">Working Student — Quality Specialist · ImmoScout24</h3>
+        <div class="meta" data-de="Deutschland · Januar 2024 – heute · ImmoScout Mobile-App (Android &amp; iOS)">Germany · January 2024 – Present · ImmoScout mobile app (Android &amp; iOS)</div>
         <ul>
-          <li>Single-handedly own end-to-end QA for two mobile core teams on both iOS and Android, from test design through release sign-off.</li>
-          <li>Author test cases from acceptance criteria and Figma design flows (happy and edge cases with pass/fail tracking), establishing a single source of truth reused by multiple teams building add-ons.</li>
-          <li>Build reusable mobile automation with Appium and Maestro (Android Studio and Xcode) for the most-used flows, protecting business-critical journeys and giving teams a reference point for redesigns.</li>
-          <li>Reproduce issues from critical user reviews, then raise, prioritize, and sprint bug tickets in JIRA and Linear, contributing to an improved app store rating.</li>
-          <li>Run release and smoke testing across iOS and Android, flag release blockers, and retest fixes before shipping, preventing critical defects and protecting paid in-app purchase flows.</li>
-          <li>Drive User Acceptance Tests (UAT) with stakeholders, developers, managers, and designers against the documented test cases before every release.</li>
-          <li>Contribute to internal, risk-based mobile audits (native flows, web views, UI/UX) based on ISO/IEC 25010, and quality audits with product managers following ISO 19011:2018.</li>
-          <li>Set up AB testing and click/button event tracking for cleaner analytics, and use AI tools to accelerate test automation, test case creation, and bug-ticket generation; also perform API testing.</li>
+          <li data-de="Verantworte eigenständig die gesamte Qualitätssicherung für zwei mobile Kernteams unter iOS und Android, vom Testentwurf bis zur Release-Freigabe.">Single-handedly own end-to-end QA for two mobile core teams on both iOS and Android, from test design through release sign-off.</li>
+          <li data-de="Erstelle Testfälle aus Akzeptanzkriterien und Figma-Designflows (Positiv- und Grenzfälle mit Pass/Fail-Nachverfolgung) und schaffe so eine zentrale Referenz, die mehrere Teams für Erweiterungen wiederverwenden.">Author test cases from acceptance criteria and Figma design flows (happy and edge cases with pass/fail tracking), establishing a single source of truth reused by multiple teams building add-ons.</li>
+          <li data-de="Baue wiederverwendbare mobile Automatisierung mit Appium und Maestro (Android Studio und Xcode) für die meistgenutzten Abläufe auf, sichere geschäftskritische Nutzerwege ab und biete Teams einen Referenzpunkt für Neugestaltungen.">Build reusable mobile automation with Appium and Maestro (Android Studio and Xcode) for the most-used flows, protecting business-critical journeys and giving teams a reference point for redesigns.</li>
+          <li data-de="Reproduziere Probleme aus kritischen Nutzerbewertungen und erstelle, priorisiere und plane Bug-Tickets in JIRA und Linear ein, was zu einer besseren App-Store-Bewertung beiträgt.">Reproduce issues from critical user reviews, then raise, prioritize, and sprint bug tickets in JIRA and Linear, contributing to an improved app store rating.</li>
+          <li data-de="Führe Release- und Smoke-Tests unter iOS und Android durch, markiere Release-Blocker und teste Korrekturen vor der Auslieferung erneut, um kritische Fehler zu verhindern und kostenpflichtige In-App-Kaufprozesse abzusichern.">Run release and smoke testing across iOS and Android, flag release blockers, and retest fixes before shipping, preventing critical defects and protecting paid in-app purchase flows.</li>
+          <li data-de="Leite vor jedem Release User Acceptance Tests (UAT) mit Stakeholdern, Entwicklern, Managern und Designern anhand der dokumentierten Testfälle.">Drive User Acceptance Tests (UAT) with stakeholders, developers, managers, and designers against the documented test cases before every release.</li>
+          <li data-de="Wirke an internen, risikobasierten Mobile-Audits (native Flows, Web-Views, UI/UX) nach ISO/IEC 25010 sowie an Qualitätsaudits mit Produktmanagern nach ISO 19011:2018 mit.">Contribute to internal, risk-based mobile audits (native flows, web views, UI/UX) based on ISO/IEC 25010, and quality audits with product managers following ISO 19011:2018.</li>
+          <li data-de="Richte AB-Tests und Klick-/Button-Event-Tracking für sauberere Analysen ein und nutze KI-Tools, um Testautomatisierung, Testfallerstellung und Bug-Ticket-Erstellung zu beschleunigen; führe zudem API-Tests durch.">Set up AB testing and click/button event tracking for cleaner analytics, and use AI tools to accelerate test automation, test case creation, and bug-ticket generation; also perform API testing.</li>
         </ul>
       </div>
       <div class="item">
         <h3>Test Engineer · Infosys</h3>
-        <div class="meta">India · March 2021 – May 2023 · PolyCloud (Daimler); KBC Banking &amp; Insurance</div>
+        <div class="meta" data-de="Indien · März 2021 – Mai 2023 · PolyCloud (Daimler); KBC Banking &amp; Insurance">India · March 2021 – May 2023 · PolyCloud (Daimler); KBC Banking &amp; Insurance</div>
         <ul>
-          <li>Functional and end-to-end automation testing with Selenium for travel and MTPL insurance.</li>
-          <li>Created ML datasets and simulated alert situations via PuTTY, monitoring VM and Kubernetes health.</li>
-          <li>Daily regression testing and logging on the live environment to maintain web application integrity.</li>
-          <li>Performed unit, API, and integration testing to verify functionality and security.</li>
+          <li data-de="Funktionale und End-to-End-Automatisierungstests mit Selenium für Reise- und Kfz-Haftpflichtversicherung (MTPL).">Functional and end-to-end automation testing with Selenium for travel and MTPL insurance.</li>
+          <li data-de="Erstellte ML-Datensätze und simulierte Alarmsituationen über PuTTY und überwachte den Zustand von VMs und Kubernetes.">Created ML datasets and simulated alert situations via PuTTY, monitoring VM and Kubernetes health.</li>
+          <li data-de="Tägliche Regressionstests und Protokollierung in der Live-Umgebung zur Sicherung der Integrität der Webanwendung.">Daily regression testing and logging on the live environment to maintain web application integrity.</li>
+          <li data-de="Führte Unit-, API- und Integrationstests durch, um Funktionalität und Sicherheit zu prüfen.">Performed unit, API, and integration testing to verify functionality and security.</li>
         </ul>
       </div>
     </div>
@@ -312,29 +320,29 @@
 <!-- EDUCATION + CERTS -->
 <section id="education">
   <div class="wrap">
-    <div class="eyebrow">Education &amp; credentials</div>
-    <h2>Education &amp; certifications</h2>
+    <div class="eyebrow" data-de="Ausbildung &amp; Qualifikationen">Education &amp; credentials</div>
+    <h2 data-de="Ausbildung &amp; Zertifikate">Education &amp; certifications</h2>
     <div class="two">
       <div class="panel">
-        <h3>🎓 Education</h3>
+        <h3 data-de="🎓 Ausbildung">🎓 Education</h3>
         <div class="edu">
           <div class="d">M.Sc. Medical Systems Engineering</div>
-          <div class="m">Otto von Guericke University, Magdeburg · April 2023 – Present</div>
-          <div class="m" style="margin-top:6px">Medical Regulatory Affairs, approval of medical devices (EUDAMED, QMS, risk management, FMEA, technical documentation, clinical evaluation), medical visualization, clinical trials &amp; biostatistics, GCP, post-market surveillance.</div>
+          <div class="m" data-de="Otto-von-Guericke-Universität, Magdeburg · April 2023 – heute">Otto von Guericke University, Magdeburg · April 2023 – Present</div>
+          <div class="m" style="margin-top:6px" data-de="Medical Regulatory Affairs, Zulassung von Medizinprodukten (EUDAMED, QMS, Risikomanagement, FMEA, technische Dokumentation, klinische Bewertung), medizinische Visualisierung, klinische Studien &amp; Biostatistik, GCP, Post-Market Surveillance.">Medical Regulatory Affairs, approval of medical devices (EUDAMED, QMS, risk management, FMEA, technical documentation, clinical evaluation), medical visualization, clinical trials &amp; biostatistics, GCP, post-market surveillance.</div>
         </div>
         <div class="edu">
           <div class="d">B.Tech. Electronics &amp; Communication Engineering</div>
-          <div class="m">College of Engineering Chengannur, India · 2016 – 2020</div>
+          <div class="m" data-de="College of Engineering Chengannur, Indien · 2016 – 2020">College of Engineering Chengannur, India · 2016 – 2020</div>
         </div>
       </div>
       <div class="panel">
-        <h3>📜 Certifications</h3>
+        <h3 data-de="📜 Zertifikate">📜 Certifications</h3>
         <ul class="certlist">
-          <li>ISO 19011:2018 — Management System Auditor Training (Udemy, Feb 2026)</li>
-          <li>ISO 14971 — Medical Device Development &amp; Risk Management (Udemy, Feb 2026)</li>
-          <li>Medical Device Process Validation — ISO 13485, IQ/OQ/PQ (Udemy, Jan 2026)</li>
-          <li>Medical Device Regulation 2017/745 (EU regulatory affairs)</li>
-          <li>Advanced Microsoft Excel (PivotTables, XLOOKUP, Data Modeling)</li>
+          <li data-de="ISO 19011:2018 — Auditorenschulung für Managementsysteme (Udemy, Feb. 2026)">ISO 19011:2018 — Management System Auditor Training (Udemy, Feb 2026)</li>
+          <li data-de="ISO 14971 — Medizinprodukteentwicklung &amp; Risikomanagement (Udemy, Feb. 2026)">ISO 14971 — Medical Device Development &amp; Risk Management (Udemy, Feb 2026)</li>
+          <li data-de="Prozessvalidierung für Medizinprodukte — ISO 13485, IQ/OQ/PQ (Udemy, Jan. 2026)">Medical Device Process Validation — ISO 13485, IQ/OQ/PQ (Udemy, Jan 2026)</li>
+          <li data-de="Medizinprodukteverordnung 2017/745 (EU Regulatory Affairs)">Medical Device Regulation 2017/745 (EU regulatory affairs)</li>
+          <li data-de="Advanced Microsoft Excel (PivotTables, XLOOKUP, Datenmodellierung)">Advanced Microsoft Excel (PivotTables, XLOOKUP, Data Modeling)</li>
         </ul>
       </div>
     </div>
@@ -344,25 +352,49 @@
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h2>Let's talk</h2>
-    <p class="lead" style="margin:0 auto">Open to Regulatory Affairs, Quality, and AI-in-MedTech
+    <div class="eyebrow" data-de="Kontakt">Contact</div>
+    <h2 data-de="Sprechen wir">Let's talk</h2>
+    <p class="lead" style="margin:0 auto" data-de="Offen für Positionen in Regulatory Affairs, Qualität und KI im MedTech-Bereich in Deutschland.">Open to Regulatory Affairs, Quality, and AI-in-MedTech
     opportunities in Germany.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:akhilanp516@gmail.com">✉️ akhilanp516@gmail.com</a>
       <a class="btn ghost" href="https://github.com/Akhila77777" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
     <div class="lang">
-      <span>🇬🇧 English — Fluent (C1)</span>
-      <span>🇩🇪 German — Intermediate (B1, actively improving)</span>
-      <span>📍 Magdeburg, Germany</span>
+      <span data-de="🇬🇧 Englisch — Fließend (C1)">🇬🇧 English — Fluent (C1)</span>
+      <span data-de="🇩🇪 Deutsch — Mittelstufe (B1, wird aktiv verbessert)">🇩🇪 German — Intermediate (B1, actively improving)</span>
+      <span data-de="📍 Magdeburg, Deutschland">📍 Magdeburg, Germany</span>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Akhila N Pillai · Built as a personal portfolio · Projects are self-directed simulations, not certified medical devices.</div>
+  <div class="wrap" data-de="© 2026 Akhila N Pillai · Als persönliches Portfolio erstellt · Projekte sind eigenständige Simulationen, keine zertifizierten Medizinprodukte.">© 2026 Akhila N Pillai · Built as a personal portfolio · Projects are self-directed simulations, not certified medical devices.</div>
 </footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('langBtn');
+  var nodes=document.querySelectorAll('[data-de]');
+  nodes.forEach(function(el){el.setAttribute('data-en', el.innerHTML);});
+  function apply(lang){
+    nodes.forEach(function(el){
+      el.innerHTML = (lang==='de') ? el.getAttribute('data-de') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+    btn.textContent = (lang==='de') ? 'EN' : 'DE';
+    btn.setAttribute('aria-label', (lang==='de') ? 'Switch to English' : 'Auf Deutsch umschalten');
+    try{localStorage.setItem('siteLang', lang);}catch(e){}
+  }
+  var saved='en';
+  try{saved=localStorage.getItem('siteLang')||'en';}catch(e){}
+  apply(saved);
+  btn.addEventListener('click',function(){
+    var cur=(document.documentElement.lang==='de')?'de':'en';
+    apply((cur==='de')?'en':'de');
+  });
+})();
+</script>
 
 </body>
 </html>
