@@ -68,6 +68,10 @@
   .btn.primary:hover{filter:brightness(1.06); text-decoration:none}
   .btn.ghost{background:var(--surface); color:var(--ink); border-color:var(--line); box-shadow:var(--shadow)}
   .btn.ghost:hover{border-color:var(--brand); text-decoration:none}
+  .heroaside{display:flex; flex-direction:column; gap:20px}
+  .photo{display:block; width:100%; max-width:270px; height:auto; aspect-ratio:3/4; object-fit:cover;
+    object-position:center 20%; border-radius:18px; border:1px solid var(--line); box-shadow:var(--shadow);
+    margin:0 auto}
   .card-id{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px}
   .card-id .row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed var(--line); font-size:.94rem}
   .card-id .row:last-child{border-bottom:none}
@@ -168,12 +172,15 @@
         <a class="btn ghost" href="https://github.com/Akhila77777" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-    <aside class="card-id">
+    <aside class="heroaside">
+    <img class="photo" src="akhila.jpg" alt="Akhila N Pillai" width="384" height="512" />
+    <div class="card-id">
       <div class="row"><span class="k" data-de="Schwerpunkt">Role focus</span><span class="v" data-de="RA / Qualität / KI-MedTech">RA / Quality / AI-MedTech</span></div>
       <div class="row"><span class="k" data-de="Studium">Studying</span><span class="v">M.Sc. Medical Systems Eng.</span></div>
       <div class="row"><span class="k" data-de="Standort">Location</span><span class="v" data-de="Magdeburg, Deutschland">Magdeburg, Germany</span></div>
       <div class="row"><span class="k" data-de="Sprachen">Languages</span><span class="v" data-de="Englisch C1 · Deutsch B1">English C1 · German B1</span></div>
       <div class="row"><span class="k">Status</span><span class="v" data-de="<span class='dot'></span>Offen für neue Möglichkeiten"><span class="dot"></span>Open to opportunities</span></div>
+    </div>
     </aside>
   </div>
 </section>
